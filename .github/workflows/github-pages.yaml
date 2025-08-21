@@ -3,6 +3,11 @@ on:
 
   workflow_dispatch:
 
+permissions:
+  contents: read  # 允许 actions/checkout 拉取代码
+  pages: write    # 允许部署到 GitHub Pages
+  id-token: write # 允许工作流请求 OIDC 令牌
+
 jobs:
   build:
     runs-on: ubuntu-latest
